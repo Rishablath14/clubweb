@@ -83,7 +83,7 @@ export default function DataTableDemo() {
             className="text-left p-0"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
-            Birth Date
+            Date of Birth
             <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         )
@@ -102,7 +102,7 @@ export default function DataTableDemo() {
             className="text-left p-0"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
-            Anniversary Date
+            Wedding Anniversary Date
             <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         )

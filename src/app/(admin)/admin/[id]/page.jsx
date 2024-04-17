@@ -69,23 +69,23 @@ const page = ({params}) => {
             <div className="border-t border-slate-800 px-4 py-5 sm:px-6">
               <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3">
                 {member.fullName!=='' && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Name</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Member's Full Name</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{member?.fullName}</dd>
                 </div>}
                 {member.mobileNum>0 && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Mobile No.</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Mobile Number</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{member?.mobileNum}</dd>
                 </div>}
                 {member.emailId!=='' && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Email</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Email ID</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{member?.emailId}</dd>
                 </div>}
                 {member.birthDate!=='' && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Birth Date</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Date of Birth</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{formattedDate(member?.birthDate)}</dd>
                 </div>}
                 {member.address!=='' && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Address</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Address (Residence)</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{member?.address}</dd>
                 </div>}
                 {member.officeAddress!=='' && <div className='sm:col-span-1'>
@@ -102,19 +102,19 @@ const page = ({params}) => {
             <div className="border-t border-slate-800 px-4 py-5 sm:px-6">
               <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3">
               {member.spouseName!=='' && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Spouse Name</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Name of Spouse</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{member?.spouseName}</dd>
                 </div>}
               {member.spouseNum>0 && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Spouse Mobile No.</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Mobile Number(Spouse)</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{member?.spouseNum}</dd>
                 </div>}
                 {member.spouseBirth!=='' && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Spouse Birth Date</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Date of Birth(Spouse)</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{formattedDate(member?.spouseBirth)}</dd>
                 </div>}
                 {member.anniversaryDate!=='' && <div className='sm:col-span-1'>
-                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Anniversary Date</dt>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Wedding Anniversary Date</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{formattedDate(member?.anniversaryDate)}</dd>
                 </div>}
                 {member.pic!=='' && <div className='sm:col-span-1'>
