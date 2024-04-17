@@ -12,24 +12,24 @@ const Welcome = () => {
         <h2 className='mb-4 font-bold text-2xl sm:text-3xl text-center text-gray-800 dark:text-gray-100'>
           A Warm Welcome to All Our Esteemed Members
         </h2>
-        <p className='my-2 text-base sm:text-lg text-black font-semibold dark:text-gray-300 text-justify'>
+        <p className='my-2 text-base sm:text-lg text-black font-semibold dark:text-white text-justify'>
           We (team 2024-2025) are thrilled and grateful to join hands with present and past teams, along with the visionary senior members of Rotary Club of Raigarh Royale. Together, we aim to continue the genuine intent and impactful actions of "Service Above Self" practiced since the club's inception.
         </p>
-        <p className='my-2 text-base sm:text-lg text-black font-semibold dark:text-gray-300 text-justify'>
+        <p className='my-2 text-base sm:text-lg text-black font-semibold dark:text-white text-justify'>
           We seek the kind cooperation and support of all our esteemed members. As a close-knit family and team, we will keep walking closer towards our greater resolve of service and fellowship.
         </p>
-        <p className='my-2 text-base sm:text-lg text-black font-semibold dark:text-gray-300 text-justify'>
+        <p className='my-2 text-base sm:text-lg text-black font-semibold dark:text-white text-justify'>
           To kickstart our effort to create a magical year for everyone, we kindly request you to fill in the form on the next page.
         </p>
         <h3 className='mt-4 text-xl font-bold text-center text-black dark:text-gray-100'>Thanks and Warm Regards</h3>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-4'>
           <div className='border border-gray-200 dark:border-gray-600 p-4 rounded-lg text-center'>
             <b className='text-lg'>Ashish Mahamia</b>
-            <p className='text-black font-semibold dark:text-gray-300'>President 2024-2025</p>
+            <p className='text-black font-semibold dark:text-white'>President 2024-2025</p>
           </div>
           <div className='border border-gray-200 dark:border-gray-600 p-4 rounded-lg text-center'>
             <b className='text-lg'>Ankit Agrawal</b>
-            <p className='text-black font-semibold dark:text-gray-300'>Secretary 2024-2025</p>
+            <p className='text-black font-semibold dark:text-white'>Secretary 2024-2025</p>
           </div>
         </div>
         <div className='flex flex-col justify-center items-center mt-4'>
