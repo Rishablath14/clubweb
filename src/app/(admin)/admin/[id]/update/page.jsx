@@ -81,8 +81,8 @@ const Member = ({params}) => {
     <h1 className='text-xl font-semibold mb-8'>Member Details</h1>
     <form onSubmit={handleUpdate} className='grid gap-8 grid-cols-1 sm:grid-cols-2 place-items-center w-full'>
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950 w-full'>Full Name</Label>
-    <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='text' placeholder='Enter your Full Name' value={form.fullName} onChange={(e)=>{setForm({...form,fullName:e.target.value})}} required/>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950 w-full'>Member Full Name</Label>
+    <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' autoFocus type='text' placeholder='Enter your Full Name' value={form.fullName} onChange={(e)=>{setForm({...form,fullName:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
     <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Mobile No.</Label>
@@ -93,7 +93,7 @@ const Member = ({params}) => {
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='email' placeholder='Enter your Email Id' value={form.emailId} onChange={(e)=>{setForm({...form,emailId:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Address</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Address (Residence)</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='text' placeholder='Enter your Address' value={form.address} onChange={(e)=>{setForm({...form,address:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
@@ -105,11 +105,11 @@ const Member = ({params}) => {
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='date' placeholder='Enter your Birth Date' value={form.birthDate} onChange={(e)=>{setForm({...form,birthDate:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Spouse Name</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Name of Spouse</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='text' placeholder='Enter your Spouse Name' value={form.spouseName} onChange={(e)=>{setForm({...form,spouseName:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Spouse No.</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Spouse Mobile No.</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='number' placeholder='Enter your Spouse Number' value={form.spouseNum} onChange={(e)=>{setForm({...form,spouseNum:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
@@ -117,11 +117,11 @@ const Member = ({params}) => {
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='date' placeholder='Enter your Spouse Birth Date' value={form.spouseBirth} onChange={(e)=>{setForm({...form,spouseBirth:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Anniversary Date</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Wedding Anniversary Date</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='date' placeholder='Enter your Anniversary Date' value={form.anniversaryDate} onChange={(e)=>{setForm({...form,anniversaryDate:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Upload Profile Photo</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Upload Member's Photo</Label>
     <CldUploadButton
           uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}
           className={`h-48 w-full border-2 mt-4 border-dotted grid place-items-center bg-slate-100 dark:bg-zinc-900 rounded-md relative ${
@@ -210,7 +210,7 @@ const Member = ({params}) => {
           </button>
         )}
     </div>    
-    <button type='submit' disabled={loading} className='w-full col-span-1 sm:col-span-2 p-2 mt-6 bg-black hover:bg-zinc-900 text-white rounded-md dark:bg-slate-50/90 dark:hover:bg-slate-100/80 dark:text-black'>Update</button>
+    <button type='submit' disabled={loading} className='w-full col-span-1 sm:col-span-2 p-2 mt-6 bg-black hover:bg-zinc-900 text-white rounded-md dark:bg-slate-50/90 dark:hover:bg-slate-100/80 dark:text-black'>Submit</button>
     </form>
     </div>
   )

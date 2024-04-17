@@ -13,14 +13,14 @@ const Member = () => {
   const [loading,setLoading] = useState(false);  
   const [form,setForm] = useState({
   fullName:"",
-  mobileNum:0,
+  mobileNum:"",
   address:"",
   officeAddress:"",
   birthDate:"",
   emailId:"",
   spouseName:"",
   spouseBirth:"",
-  spouseNum:0,
+  spouseNum:"",
   anniversaryDate:"",
   pic:"",
   picId:"",
@@ -81,14 +81,14 @@ const Member = () => {
     await addCustomercont(form);
     toast.success("Data Saved Successfully",{id:toastid});
     setForm({fullName:"",
-    mobileNum:0,
+    mobileNum:"",
     address:"",
     officeAddress:"",
     birthDate:"",
     emailId:"",
     spouseName:"",
     spouseBirth:"",
-    spouseNum:0,
+    spouseNum:"",
     anniversaryDate:"",
     pic:"",
     picId:"",
@@ -104,7 +104,7 @@ const Member = () => {
     <h1 className='text-xl font-semibold mb-8'>Member Details</h1>
     <form onSubmit={handleSubmit} className='grid gap-8 grid-cols-1 sm:grid-cols-2 place-items-center w-full'>
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950 w-full'>Full Name</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950 w-full'>Member Full Name</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' autoFocus type='text' placeholder='Enter your Full Name' value={form.fullName} onChange={(e)=>{setForm({...form,fullName:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
@@ -116,7 +116,7 @@ const Member = () => {
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='email' placeholder='Enter your Email Id' value={form.emailId} onChange={(e)=>{setForm({...form,emailId:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Address</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Address (Residence)</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='text' placeholder='Enter your Address' value={form.address} onChange={(e)=>{setForm({...form,address:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
@@ -128,11 +128,11 @@ const Member = () => {
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='date' placeholder='Enter your Birth Date' value={form.birthDate} onChange={(e)=>{setForm({...form,birthDate:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Spouse Name</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Name of Spouse</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='text' placeholder='Enter your Spouse Name' value={form.spouseName} onChange={(e)=>{setForm({...form,spouseName:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Spouse No.</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Spouse Mobile No.</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='number' placeholder='Enter your Spouse Number' value={form.spouseNum} onChange={(e)=>{setForm({...form,spouseNum:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
@@ -140,11 +140,11 @@ const Member = () => {
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='date' placeholder='Enter your Spouse Birth Date' value={form.spouseBirth} onChange={(e)=>{setForm({...form,spouseBirth:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Anniversary Date</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Wedding Anniversary Date</Label>
     <Input className='mt-2 w-full p-1 border dark:border-white dark:bg-zinc-950 border-black' type='date' placeholder='Enter your Anniversary Date' value={form.anniversaryDate} onChange={(e)=>{setForm({...form,anniversaryDate:e.target.value})}} required/>
     </div>    
     <div className='w-full'>
-    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Upload Profile Photo</Label>
+    <Label className='bg-slate-50 rounded-md p-1 dark:bg-zinc-950'>Upload Member's Photo</Label>
     <CldUploadButton
           uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}
           className={`h-48 w-full border-2 mt-4 border-dotted grid place-items-center bg-slate-100 dark:bg-zinc-900 rounded-md relative ${

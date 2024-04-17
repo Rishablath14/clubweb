@@ -118,11 +118,11 @@ const page = ({params}) => {
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{formattedDate(member?.anniversaryDate)}</dd>
                 </div>}
                 {member.pic!=='' && <div className='sm:col-span-1'>
-                <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Profile Photo</dt>  
+                <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Member's Photo</dt>  
                 <dd className="mt-1 text-sm text-gray-900 dark:text-white"><a href={member.pic} download={`${member.fullName}_profile`}><Image src={member.pic} alt="Profile Photo" width={300} height={300}/></a></dd>
                 </div>}
                 {member.couplePic!=='' && <div className='sm:col-span-1'>
-                <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Profile Photo</dt>  
+                <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Couple Photo</dt>  
                 <dd className="mt-1 text-sm text-gray-900 dark:text-white"><Image src={member.couplePic} alt="Couple Photo" width={300} height={300}/></dd>
                 </div>}
               </dl>

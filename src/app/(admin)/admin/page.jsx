@@ -23,7 +23,7 @@ const login = () => {
               id:toastlo
             });
             setLoading(false);
-            router.push("/admin/dashboard");
+            window.location.reload();
           }else{
             toast.error("Invalid Credentials",{
               id:toastlo
