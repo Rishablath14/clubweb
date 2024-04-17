@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/table"
 import Link from 'next/link'
 import { MemberContext } from "./ContextProvider"
+import { downloadToExcel } from "@/utils/exportToExcel"
 
 
 export default function DataTableDemo() {
@@ -44,6 +45,25 @@ export default function DataTableDemo() {
   const [rowSelection, setRowSelection] = React.useState({})
   const [filterBy,setFilterBy] = React.useState('fullName')
   const columns = [
+    {
+        accessorKey: "createdAt",
+        enableHiding: false,
+        header: "Created At",
+        cell: ({ row }) => {
+          const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            timeZoneName: 'short'
+        };
+          const date = new Date(row.getValue("createdAt"));
+          const udata = date.toLocaleDateString(undefined, options);
+          return <div className="text-left">{udata}</div>
+        },
+      },
     {
         accessorKey: "fullName",
         enableHiding: false,
@@ -168,7 +188,7 @@ export default function DataTableDemo() {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="grid gap-2 grid-cols-2 place-items-center md:grid-cols-4 py-4">
         <Input
           placeholder={`Filter ${filterBy}...`}
           value={(table.getColumn(filterBy)?.getFilterValue()) ?? ""}
@@ -179,7 +199,7 @@ export default function DataTableDemo() {
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto mr-1">
+            <Button variant="outline" className="w-full ml-2 mr-1">
               Filter By <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
@@ -189,7 +209,7 @@ export default function DataTableDemo() {
         </DropdownMenu>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="outline" className="w-full ml-auto mr-2">
               Columns <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
@@ -213,6 +233,7 @@ export default function DataTableDemo() {
               })}
           </DropdownMenuContent>
         </DropdownMenu>
+        <button className="flex-wrap w-full p-1 rounded border border-black dark:border-white" onClick={()=>downloadToExcel(members)}>Export to Excel</button>
       </div>
       <div className="rounded-md border">
         <Table>

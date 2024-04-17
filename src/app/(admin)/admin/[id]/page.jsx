@@ -27,6 +27,19 @@ const page = ({params}) => {
     const formattedDate = `${udate.getDate()} / ${udate.getMonth() + 1} / ${udate.getFullYear()}`;
     return formattedDate;
   }
+  const formattedDate2 = (date)=>{
+    const udate = new Date(date);
+    const options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      timeZoneName: 'short'
+  };
+    return udate.toLocaleDateString(undefined, options);
+  }
   const handleDelete = async()=>{
     const toastid = toast.loading("Deleting..");
     try {
@@ -38,6 +51,7 @@ const page = ({params}) => {
       toast.error('An error occurred while deleting member!',{id:toastid});
     }
   }
+  console.log(member);
   if(!member) return <div className='w-full min-h-[calc(100vh-96px)] flex justify-center items-center'>Loading...</div>
   return (
     <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
@@ -68,6 +82,10 @@ const page = ({params}) => {
             </div>
             <div className="border-t border-slate-800 px-4 py-5 sm:px-6">
               <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3">
+                {member.createdAt!=='' && <div className='sm:col-span-1'>
+                  <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Created At</dt>
+                  <dd className="mt-1 text-sm text-gray-900 dark:text-white">{formattedDate2(member?.createdAt)}</dd>
+                </div>}
                 {member.fullName!=='' && <div className='sm:col-span-1'>
                   <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Member's Full Name</dt>
                   <dd className="mt-1 text-sm text-gray-900 dark:text-white">{member?.fullName}</dd>

@@ -15,7 +15,7 @@ const memberSchema = new mongoose.Schema({
   picId:String,
   couplePic:String,
   couplePicId:String,
-});
+},{timestamps:true});
 
 // const userDetails = mongoose.model('userDetails', userSchema);
 const Members = mongoose.models.Members || mongoose.model('Members', memberSchema);
