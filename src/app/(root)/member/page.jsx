@@ -76,7 +76,8 @@ const Member = () => {
   const handleSubmit = async(e)=>
   {
     e.preventDefault();
-    if(!form.pic&&!form.couplePic){toast.error("Upload Pictures to continue..");return}
+    setLoading(true);
+    if(!form.pic || !form.couplePic){toast.error("Upload Pictures to continue..");setLoading(false);return}
     const toastid = toast.loading("Saving Data..");
     await addCustomercont(form);
     toast.success("Data Saved Successfully",{id:toastid});
@@ -94,8 +95,8 @@ const Member = () => {
     picId:"",
     couplePic:"",
     couplePicId:""})
+    setLoading(false);
   }
-  console.log(form);
   return (
     <div className='flex flex-col w-full min-h-[calc(100vh-96px)] items-center justify-center p-2 md:p-8'>
      <div className='w-full text-center mb-4'>

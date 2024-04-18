@@ -64,7 +64,7 @@ const Member = ({params}) => {
   const handleUpdate = async (e)=>{
     e.preventDefault();
     const toastid = toast.loading("Updating...");
-    if(!form.pic&&!form.couplePic){toast.error("Upload Pictures to continue..",{id:toastid});return}
+    if(!form.pic || !form.couplePic){toast.error("Upload Pictures to continue..",{id:toastid});return}
     if(initialData===form){toast.info("No Changes to Update",{id:toastid});return}
     setLoading(true);
     try{
