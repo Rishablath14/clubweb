@@ -44,7 +44,7 @@ const Member = () => {
       const res = await removeImagefunc(publicId);
       if (res) {
         toast.success("Image Removed",{id:toastid});
-        setForm({...form,couplePic:"",couplePicId:""});
+        setForm({...form,pic:"",picId:""});
       }
     } catch (error) {
       console.log(error);
