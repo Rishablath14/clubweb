@@ -48,7 +48,18 @@ export default function DataTableDemo() {
     {
         accessorKey: "createdAt",
         enableHiding: false,
-        header: "Created At",
+        header: ({ column }) => {
+          return (
+            <Button
+              variant="ghost"
+              className="text-left p-0"
+              onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            >
+              Created At
+              <ArrowUpDown className="ml-2 h-4 w-4" />
+            </Button>
+          )
+        },
         cell: ({ row }) => {
           const options = {
             year: 'numeric',
