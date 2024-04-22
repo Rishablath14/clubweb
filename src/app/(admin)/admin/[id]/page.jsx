@@ -41,6 +41,8 @@ const page = ({params}) => {
     return udate.toLocaleDateString(undefined, options);
   }
   const handleDelete = async()=>{
+    const cnfrm = window.confirm("Are you sure you want to delete the member!");
+    if(!cnfrm) return;
     const toastid = toast.loading("Deleting..");
     try {
       await deleteCustomercont(params.id);

@@ -5,7 +5,7 @@ import { addMember, deleteMember, getAllMembers, removeImagefunc, updateMember }
 export const MemberContext = createContext();
 
 export const MemberProvider = ({ children }) => {
-  const [members, setMembers] = useState([]);
+  const [members, setMembers] = useState(null);
   
   const fetchMembers = async () => {
     const data = await getAllMembers();

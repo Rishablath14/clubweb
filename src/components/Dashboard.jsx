@@ -169,6 +169,8 @@ export default function DataTableDemo() {
   ]
   
   const handleDelete = async (id) => {
+    const cnfrm = window.confirm("Are you sure you want to delete the member!");
+    if(!cnfrm) return;
     const toastid = toast.loading("Deleting...");
     try {
       await deleteCustomercont(id);
@@ -196,7 +198,7 @@ export default function DataTableDemo() {
       rowSelection,
     },
   })
-
+  if(members==null) return <div className='w-full min-h-[calc(100vh-96px)] flex justify-center items-center'>Loading...</div>
   return (
     <div className="w-full">
       <div className="grid gap-2 grid-cols-2 place-items-center md:grid-cols-4 py-4">
